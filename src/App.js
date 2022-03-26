@@ -2,9 +2,15 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <p>Hello!</p>
-    </div>
+    <>
+      <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg">
+        <div class="text-center">
+          <div class="text-xl font-medium text-black">ChitChat</div>
+          <p class="text-slate-500">You have a new message!</p>
+          <button class="bg-sky-600 hover:bg-sky-700 ...">Hit</button>
+        </div>
+      </div>
+    </>
   );
 }
 
