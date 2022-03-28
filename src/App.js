@@ -1,11 +1,11 @@
 import './App.css';
 
-import reactLogo from '../public/logo192.png';
+import Login from './components/Login'
 
-function App() {
+const App = () => {
   return (
     <>
-      <div class="p-6 max-w-sm mx-auto bg-white dark:bg-black rounded-xl shadow-lg">
+      {/* <div class="p-6 max-w-sm mx-auto bg-white dark:bg-black rounded-xl shadow-lg">
         <div class="text-center">
           <div class="text-xl font-medium text-black">ChitChat</div>
           <p class="text-slate-500">You have a new message!</p>
@@ -41,9 +41,11 @@ function App() {
         </div>
       </div>
 
-      <img src={reactLogo} />
+      <img src={reactLogo} /> */}
+
+      <Login />
     </>
   );
-}
+};
 
 export default App;
