@@ -1,5 +1,7 @@
 import './App.css';
 
+import reactLogo from '../public/logo192.png';
+
 function App() {
   return (
     <>
@@ -38,6 +40,8 @@ function App() {
           <span>Web Developer</span>
         </div>
       </div>
+
+      <img src={reactLogo} />
     </>
   );
 }
