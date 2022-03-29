@@ -4,7 +4,7 @@ import Login from './components/Login'
 
 const App = () => {
   return (
-    <div class="flex h-screen">
+    <div>
       {/* <div class="p-6 max-w-sm mx-auto bg-white dark:bg-black rounded-xl shadow-lg">
         <div class="text-center">
           <div class="text-xl font-medium text-black">ChitChat</div>
@@ -43,7 +43,10 @@ const App = () => {
 
       <img src={reactLogo} /> */}
 
-      < Login />
+      {/* The top container allows tailwind to center the element */}
+      <div class="flex h-screen">
+        < Login />
+      </div>
     </div>
   );
 };
