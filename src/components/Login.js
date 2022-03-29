@@ -16,8 +16,8 @@ const Login = () => {
         <div class="grid">
           <label htmlFor="email">Email</label>
           <input type="email" id="email" class="form-control
-              px-3
-              py-1.5
+              px-5
+              py-2
               text-base
               font-normal
               text-gray-700
@@ -33,8 +33,8 @@ const Login = () => {
           <label htmlFor="psw">Password</label>
           <input type="password" id="psw"
             class="form-control
-              px-3
-              py-1.5
+              px-5
+              py-2
               text-base
               font-normal
               text-gray-700
