@@ -1,6 +1,7 @@
 import './App.css';
 
-import Login from './components/Login'
+import Navbar from './components/Navbar';
+import Login from './components/Login';
 
 const App = () => {
   return (
@@ -42,6 +43,8 @@ const App = () => {
       </div>
 
       <img src={reactLogo} /> */}
+
+      <Navbar />
 
       {/* The top container allows tailwind to center the element */}
       <div class="flex h-screen">
