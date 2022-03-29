@@ -3,7 +3,7 @@ import { FaUnlockAlt } from "react-icons/fa";
 
 const Login = () => {
   return (
-    <form class="bg-sky-200 m-auto w-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl">
+    <form class="bg-[#c6e6d6] m-auto w-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
       <div class="pb-5">
         <h1 class="text-2xl pb-5">Login</h1>
         <FaUnlockAlt size="30" class="mx-auto pb-2" />
@@ -22,12 +22,11 @@ const Login = () => {
               font-normal
               text-gray-700
               bg-white bg-clip-padding
-              border-2 border-solid border-gray-300
-              rounded
+              border-2 border-solid border-blue-300
               transition
               ease-in-out
               m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
         </div>
 
         <div class="grid">
@@ -40,14 +39,13 @@ const Login = () => {
               font-normal
               text-gray-700
               bg-white bg-clip-padding
-              border-2 border-solid border-gray-300
-              rounded
+              border-2 border-solid border-blue-300
               transition
               ease-in-out
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" required />
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
         </div>
 
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-3/5 mx-auto">Login</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-3/5 mx-auto rounded-full">Login</button>
       </div>
     </form>
   )
