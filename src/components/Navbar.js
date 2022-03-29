@@ -6,7 +6,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 
 const Navbar = () => {
     return (
-        <section class="fixed w-screen bg-[#3e2a6d33] py-4 shadow-lg shadow-red-300/25">
+        <section class="fixed w-screen bg-[rgba(62,42,109,0.95)] py-4 shadow-lg shadow-red-300/25">
             <div class="flex flex-row relative mx-36 items-center">
                 <div class="flex items-center">
                     <SiReactivex size="50" class="text-red-200 shadow-2xl" />
