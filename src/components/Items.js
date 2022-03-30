@@ -2,94 +2,40 @@ import React from 'react';
 
 import laptop from '../assets/images/laptop.jpg';
 import headset from '../assets/images/headset.jpg';
+import ItemCard from './ItemCard';
 
-const Login = () => {
+const itemList = [
+    {
+        id: 'a0',
+        image: laptop,
+        description: 'Laptop',
+        price: 2439
+    },
 
+    {
+        id: 'a1',
+        image: headset,
+        description: 'Headset',
+        price: 499
+    },
+];
 
-    const item = (
-        <div class="bg-[#c6cde0] w-64 h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
-            <img src={headset} class="rounded-xl" />
-            <p class="pt-5">Aras Laptop</p>
-        </div>
-    );
+const itemCards = itemList.map(item => (
+    <ItemCard
+        img={item.image}
+        desc={item.description}
+        price={item.price}
+    />
+));
+
+const Items = () => {
 
     return (
         // <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 content-evenly py-36 col-span-7">
-            <section class="flex flex-row flex-wrap justify-center py-36 gap-20">
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
-            {item}
+        <section class="flex flex-row flex-wrap justify-center py-36 gap-20">
+            {itemCards}
         </section>
     );
 };
 
-export default Login;
+export default Items;
