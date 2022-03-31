@@ -9,16 +9,8 @@ const App = () => {
   return (
     <div>
       <Navbar />
-
-      {/* The top container allows tailwind to center the element */}
-      <div class="flex h-screen">
-        <Login />
-      </div>
-
-      <div class="mx-36">
-        <Items />
-      </div>
-
+      <Login />
+      <Items />
       <CartModal />
     </div>
   );
