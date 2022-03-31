@@ -8,8 +8,8 @@ const ItemCard = props => {
 
             <p class="pt-5 pb-5 text-xl font-bold">${props.price}</p>
 
-            <button class="block mx-auto bg-transparent hover:bg-[rgba(62,42,109,0.95)] text-indigo-700 font-bold hover:text-white py-2 px-10 border border-indigo-500 hover:border-transparent rounded">
-                Buy
+            <button class="block mx-auto bg-transparent hover:bg-[rgba(62,42,109,0.95)] text-indigo-700 font-bold hover:text-white py-2 px-7 border border-indigo-500 hover:border-transparent rounded">
+                Add Cart
             </button>
         </div>
     );
