@@ -11,7 +11,7 @@ const CartBackdrop = () => {
 
 const CartOverlay = () => {
     return (
-        <div class="fixed top-1/3 left-1/3 h-1/3 w-1/3 bg-blue z-50 overflow-hidden text-center bg-red-300 rounded-md">
+        <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-32 bg-blue z-50 text-center bg-red-300 rounded-md">
             CartOverlay
         </div>
     );
