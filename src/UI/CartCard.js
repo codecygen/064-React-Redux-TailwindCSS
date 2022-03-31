@@ -4,9 +4,9 @@ import { ImBin } from "react-icons/im";
 
 const CartCard = props => {
     return (
-        <div class="my-2 mx-16 flex flex-row bg-slate-100 rounded-xl shadow-xl">
+        <div class="my-2 flex flex-row bg-slate-100 rounded-xl shadow-xl">
             <div class="h-32 w-2/6">
-                <img src={props.img} class="h-full mx-auto rounded-xl" />
+                <img src={props.img} class="h-full mx-auto rounded-xl" alt="Item Display" />
             </div>
 
             <div class="w-3/6 inline-flex justify-center items-center">
