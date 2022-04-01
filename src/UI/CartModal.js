@@ -5,7 +5,7 @@ import CartWindow from './CartWindow';
 
 const CartBackdrop = () => {
     return (
-        <div class="fixed top-0 left-0 h-screen w-screen bg-[rgba(22,51,50,0.5)] z-10">
+        <div className="fixed top-0 left-0 h-screen w-screen bg-[rgba(22,51,50,0.5)] z-10">
             {/* Backdrop */}
         </div>
     );

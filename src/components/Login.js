@@ -3,20 +3,20 @@ import { FaUnlockAlt } from "react-icons/fa";
 
 const Login = () => {
   return (
-    <div class="flex h-screen">
-      <form class="bg-[#c6cde0] m-auto w-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
-        <div class="pb-5">
-          <h1 class="text-2xl pb-5">Login</h1>
-          <FaUnlockAlt size="30" class="mx-auto pb-2" />
-          <p class="text-lg">This is a practice project.</p>
-          <p class="text-lg">Enter dummy email and</p>
-          <p class="text-lg">dummy password...</p>
+    <div className="flex h-screen">
+      <form className="bg-[#c6cde0] m-auto w-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
+        <div className="pb-5">
+          <h1 className="text-2xl pb-5">Login</h1>
+          <FaUnlockAlt size="30" className="mx-auto pb-2" />
+          <p className="text-lg">This is a practice project.</p>
+          <p className="text-lg">Enter dummy email and</p>
+          <p className="text-lg">dummy password...</p>
         </div>
 
-        <div class="flex flex-col space-y-6">
-          <div class="grid">
+        <div className="flex flex-col space-y-6">
+          <div className="grid">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" class="form-control
+            <input type="email" id="email" className="form-control
               px-5
               py-2
               text-base
@@ -30,10 +30,10 @@ const Login = () => {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
           </div>
 
-          <div class="grid">
+          <div className="grid">
             <label htmlFor="psw">Password</label>
             <input type="password" id="psw"
-              class="form-control
+              className="form-control
               px-5
               py-2
               text-base
@@ -46,7 +46,7 @@ const Login = () => {
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
           </div>
 
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-3/5 mx-auto rounded-full">Login</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-3/5 mx-auto rounded-full">Login</button>
         </div>
       </form>
     </div>

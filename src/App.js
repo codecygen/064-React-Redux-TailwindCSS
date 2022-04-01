@@ -1,17 +1,23 @@
+// import { useState } from 'react';
+
 import './App.css';
 
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Items from './components/Items';
-import CartModal from './UI/CartModal';
+// import CartModal from './UI/CartModal';
+
+const clickCartHandler = () => {
+  console.log('clicked!');
+};
 
 const App = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar clickCartHandler={clickCartHandler} />
       <Login />
       <Items />
-      <CartModal />
+      {/* <CartModal /> */}
     </div>
   );
 };
