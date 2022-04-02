@@ -11,7 +11,6 @@ const App = () => {
   const [isCartShown, setIsCartShown] = useState(false);
 
   const clickCartHandler = () => {
-    console.log('clicked!');
     setIsCartShown(prevValue => !prevValue);
   };
 

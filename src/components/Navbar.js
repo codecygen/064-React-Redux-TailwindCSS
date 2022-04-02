@@ -15,8 +15,6 @@ const Navbar = props => {
         return () => clearInterval(interim);
     }, [windowWidth]);
 
-    console.log(windowWidth);
-
     return (
         <section className="fixed right-0 left-0 w-screen bg-[rgba(62,42,109,0.95)] py-6 shadow-lg shadow-red-300/25">
             <div className="flex flex-row relative mx-5 lg:mx-36 items-center">
@@ -25,7 +23,7 @@ const Navbar = props => {
 
                     {windowWidth >= 540 && 
                     <h1 className="px-5 text-lg lg:text-3xl font-serif italic text-red-200">
-                        Aras-lify
+                        ArasShop
                     </h1>}
                 </div>
 
