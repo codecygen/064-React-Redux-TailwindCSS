@@ -34,7 +34,7 @@ const CartWindow = props => {
             <button className="bg-red-800 hover:bg-red-900 text-white font-bold rounded-xl p-3 mb-5 shadow-2xl mr-5 px-5"
                 onClick={props.clickCartHandler}
             >
-                Cancel
+                Close
             </button>
             <button className="bg-violet-800 hover:bg-violet-900 text-white font-bold rounded-xl p-3 mb-5 shadow-2xl">
                 Checkout
