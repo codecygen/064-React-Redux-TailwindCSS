@@ -9,7 +9,7 @@ import headset from '../assets/images/headset.jpg';
 // import monitor from '../assets/images/monitor.jpg';
 // import vrHeadset from '../assets/images/vrHeadset.jpg';
 
-const CartWindow = () => {
+const CartWindow = props => {
     return (
         <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-128 bg-blue z-50 bg-[rgba(197,206,231,0.95)] rounded-md shadow-2xl px-16 text-right">
             <h1 className="text-3xl font-bold pt-10 pb-5 text-center">Shopping Cart</h1>
@@ -31,6 +31,11 @@ const CartWindow = () => {
                 <p className="text-2xl font-semibold w-1/6">$3000</p>
             </div>
 
+            <button className="bg-red-800 hover:bg-red-900 text-white font-bold rounded-xl p-3 mb-5 shadow-2xl mr-5 px-5"
+                onClick={props.clickCartHandler}
+            >
+                Cancel
+            </button>
             <button className="bg-violet-800 hover:bg-violet-900 text-white font-bold rounded-xl p-3 mb-5 shadow-2xl">
                 Checkout
             </button>
