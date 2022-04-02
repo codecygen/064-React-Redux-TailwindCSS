@@ -4,7 +4,7 @@ import { FaUnlockAlt } from "react-icons/fa";
 const Login = () => {
   return (
     <div className="flex h-screen">
-      <form className="bg-[#c6cde0] m-auto w-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
+      <form className="bg-[#c6cde0] w-72 md:w-96 m-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
         <div className="pb-5">
           <h1 className="text-2xl pb-5">Login</h1>
           <FaUnlockAlt size="30" className="mx-auto pb-2" />
@@ -17,6 +17,8 @@ const Login = () => {
           <div className="grid">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" className="form-control
+              w-11/12
+              mx-auto
               px-5
               py-2
               text-base
@@ -34,6 +36,8 @@ const Login = () => {
             <label htmlFor="psw">Password</label>
             <input type="password" id="psw"
               className="form-control
+              mx-auto
+              w-11/12
               px-5
               py-2
               text-base

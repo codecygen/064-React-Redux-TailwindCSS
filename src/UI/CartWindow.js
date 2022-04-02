@@ -26,9 +26,9 @@ const CartWindow = props => {
                 <CartCard img={laptop} desc="Laptop" price="2439" />
             </div>
 
-            <div className="flex flex-row text-right py-8 pr-10 items-center">
-                <h1 className="text-2xl font-bold w-5/6">Subtotal</h1>
-                <p className="text-2xl font-semibold w-1/6">$3000</p>
+            <div className="flex flex-row justify-end text-right py-8">
+                <h1 className="text-2xl font-bold pr-5 sm:pr-10">Subtotal</h1>
+                <p className="text-2xl font-semibold">$3000</p>
             </div>
 
             <button className="bg-red-800 hover:bg-red-900 text-white font-bold rounded-xl p-3 mb-5 shadow-2xl mr-5 px-5"
