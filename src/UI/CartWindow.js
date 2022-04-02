@@ -11,10 +11,10 @@ import headset from '../assets/images/headset.jpg';
 
 const CartWindow = props => {
     return (
-        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-128 bg-blue z-50 bg-[rgba(197,206,231,0.95)] rounded-md shadow-2xl px-16 text-right">
-            <h1 className="text-3xl font-bold pt-10 pb-5 text-center">Shopping Cart</h1>
+        <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 px-2 sm:w-100 lg:w-128 lg:px-16 bg-blue z-50 bg-[rgba(197,206,231,0.95)] rounded-md shadow-2xl text-right">
+            <h1 className="text-3xl font-bold pt-10 pb-5 text-center">Cart</h1>
 
-            <div className="overflow-y-scroll max-h-96 px-6 shadow-lg bg-slate-300">
+            <div className="overflow-y-scroll max-h-48 sm:max-h-72 lg:max-h-96 px-6 shadow-lg bg-slate-300">
                 <CartCard img={headset} desc="Headset" price="499" />
                 <CartCard img={laptop} desc="Laptop" price="2439" />
                 <CartCard img={laptop} desc="Laptop" price="2439" />
@@ -26,7 +26,7 @@ const CartWindow = props => {
                 <CartCard img={laptop} desc="Laptop" price="2439" />
             </div>
 
-            <div className="flex flex-row text-right py-8 items-center pr-1">
+            <div className="flex flex-row text-right py-8 pr-10 items-center">
                 <h1 className="text-2xl font-bold w-5/6">Subtotal</h1>
                 <p className="text-2xl font-semibold w-1/6">$3000</p>
             </div>
