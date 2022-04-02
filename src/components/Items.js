@@ -56,6 +56,7 @@ const itemList = [
 
 const itemCards = itemList.map(item => (
     <ItemCard
+        key={item.id}
         img={item.image}
         desc={item.description}
         price={item.price}
