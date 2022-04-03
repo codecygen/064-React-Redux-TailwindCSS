@@ -5,9 +5,11 @@ import Login from './components/Login';
 import Items from './components/Items';
 import CartModal from './UI/CartModal';
 
-
+import { useSelector } from 'react-redux';
 
 const App = () => {
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+
   const [isCartShown, setIsCartShown] = useState(false);
 
   const clickCartHandler = () => {
@@ -17,8 +19,8 @@ const App = () => {
   return (
     <div>
       <Navbar clickCartHandler={clickCartHandler} />
-      <Login />
-      <Items />
+      {!isAuthenticated && <Login />}
+      {isAuthenticated && <Items />}
       {isCartShown && <CartModal clickCartHandler={clickCartHandler} />}
     </div>
   );

@@ -10,9 +10,7 @@ import { authActions } from '../store/auth-slice';
 const Navbar = props => {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-
-    console.log(isAuthenticated);
-
+    
     const logoutHandler = () => {
         dispatch(authActions.logout());
     };

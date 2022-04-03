@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaUnlockAlt } from "react-icons/fa";
 
 import { useDispatch } from 'react-redux';
@@ -7,9 +7,14 @@ import { authActions } from '../store/auth-slice';
 const Login = () => {
   const dispatch = useDispatch();
 
+  const userNameRef = useRef();
+
   const loginHandler = event => {
     event.preventDefault();
     dispatch(authActions.login());
+
+    const enteredUserName = userNameRef.current.value;
+    userNameRef.current.value = '';
   };
 
   return (
@@ -40,7 +45,9 @@ const Login = () => {
               transition
               ease-in-out
               m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
+            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required
+              ref={userNameRef}
+            />
           </div>
 
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 w-3/5 mx-auto rounded-full">Login</button>
