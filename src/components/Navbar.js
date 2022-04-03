@@ -10,7 +10,8 @@ import { authActions } from '../store/auth-slice';
 const Navbar = props => {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-    
+    const userName = useSelector(state => state.auth.userName);
+
     const logoutHandler = () => {
         dispatch(authActions.logout());
     };
@@ -47,10 +48,12 @@ const Navbar = props => {
                     </button>
 
                     <p className="px-5 lg:px-16 text-lg lg:text-2xl text-neutral-50 text-center">
-                        Welcome <br /> Aras
+                        Welcome <br /> {userName}
                     </p>
 
-                    <button className="text-sm lg:text-xl flex items-center bg-[rgba(17,5,19,0.5)] hover:bg-[rgba(78,40,67,0.5)] text-white font-bold py-2 px-2 shadow-lg">
+                    <button className="text-sm lg:text-xl flex items-center bg-[rgba(17,5,19,0.5)] hover:bg-[rgba(78,40,67,0.5)] text-white font-bold py-2 px-2 shadow-lg"
+                        onClick={logoutHandler}
+                    >
                         <HiOutlineLogout className="text-red-200 shadow-2xl px-2" size="40" />
                         <p>Logout</p>
                     </button>

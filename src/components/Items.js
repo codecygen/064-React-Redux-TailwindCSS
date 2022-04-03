@@ -66,7 +66,7 @@ const itemCards = itemList.map(item => (
 const Items = () => {
 
     return (
-        <section className="flex flex-row flex-wrap justify-center pb-16 gap-20 mx-10 md:mx-36">
+        <section className="flex flex-row flex-wrap justify-center pb-16 gap-20 mx-10 md:mx-36 py-36">
             {itemCards}
         </section>
     );

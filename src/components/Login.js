@@ -14,6 +14,8 @@ const Login = () => {
     dispatch(authActions.login());
 
     const enteredUserName = userNameRef.current.value;
+    dispatch(authActions.getName(enteredUserName));
+    
     userNameRef.current.value = '';
   };
 
