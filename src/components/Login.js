@@ -9,14 +9,13 @@ const Login = () => {
           <h1 className="text-2xl pb-5">Login</h1>
           <FaUnlockAlt size="30" className="mx-auto pb-2" />
           <p className="text-lg">This is a practice project.</p>
-          <p className="text-lg">Enter dummy email and</p>
-          <p className="text-lg">dummy password...</p>
+          <p className="text-lg">Enter dummy usename.</p>
         </div>
 
         <div className="flex flex-col space-y-6">
           <div className="grid">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" className="form-control
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" className="form-control
               w-11/12
               mx-auto
               px-5
@@ -29,24 +28,6 @@ const Login = () => {
               transition
               ease-in-out
               m-0
-            focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
-          </div>
-
-          <div className="grid">
-            <label htmlFor="psw">Password</label>
-            <input type="password" id="psw"
-              className="form-control
-              mx-auto
-              w-11/12
-              px-5
-              py-2
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border-2 border-solid border-blue-300
-              transition
-              ease-in-out
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none rounded-full" required />
           </div>
 
