@@ -1,10 +1,22 @@
 import React from 'react';
 import { FaUnlockAlt } from "react-icons/fa";
 
+import { useDispatch } from 'react-redux';
+import { authActions } from '../store/auth-slice';
+
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const loginHandler = event => {
+    event.preventDefault();
+    dispatch(authActions.login());
+  };
+
   return (
     <div className="flex h-screen">
-      <form className="bg-[#c6cde0] w-72 md:w-96 m-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200">
+      <form className="bg-[#c6cde0] w-72 md:w-96 m-auto h-82 text-center py-10 px-10 rounded-lg shadow-2xl border-2 border-blue-200"
+        onSubmit={loginHandler}
+      >
         <div className="pb-5">
           <h1 className="text-2xl pb-5">Login</h1>
           <FaUnlockAlt size="30" className="mx-auto pb-2" />
