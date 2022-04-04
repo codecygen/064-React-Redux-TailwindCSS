@@ -61,8 +61,8 @@ const Items = () => {
 
     const dispatch = useDispatch();
 
-    const addItemHandler = () => {
-        dispatch(cartActions.addItem());
+    const addItemHandler = item => {
+        dispatch(cartActions.addItem(item));
     };
 
     const cartItems = useSelector(state => state.cart.cartItems);
@@ -72,6 +72,7 @@ const Items = () => {
     const itemCards = itemList.map(item => (
         <ItemCard
             key={item.id}
+            id={item.id}
             img={item.image}
             desc={item.description}
             price={item.price}
