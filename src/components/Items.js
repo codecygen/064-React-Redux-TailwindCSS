@@ -10,6 +10,9 @@ import vrHeadset from '../assets/images/vrHeadset.jpg';
 
 import ItemCard from './ItemCard';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { cartActions } from '../store/cart-slice';
+
 const itemList = [
     {
         id: 'a0',
@@ -54,16 +57,27 @@ const itemList = [
     },
 ];
 
-const itemCards = itemList.map(item => (
-    <ItemCard
-        key={item.id}
-        img={item.image}
-        desc={item.description}
-        price={item.price}
-    />
-));
-
 const Items = () => {
+
+    const dispatch = useDispatch();
+
+    const addItemHandler = () => {
+        dispatch(cartActions.addItem());
+    };
+
+    const cartItems = useSelector(state => state.cart.cartItems);
+
+    console.log(cartItems);
+
+    const itemCards = itemList.map(item => (
+        <ItemCard
+            key={item.id}
+            img={item.image}
+            desc={item.description}
+            price={item.price}
+            addItemHandler={addItemHandler}
+        />
+    ));
 
     return (
         <section className="flex flex-row flex-wrap justify-center pb-16 gap-20 mx-10 md:mx-36 py-36">
