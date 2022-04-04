@@ -61,8 +61,8 @@ const Items = () => {
 
     const dispatch = useDispatch();
 
-    const addItemHandler = item => {
-        dispatch(cartActions.addItem(item));
+    const addItemHandler = itemObject => {
+        dispatch(cartActions.addItem(itemObject));
     };
 
     const cartItems = useSelector(state => state.cart.cartItems);
