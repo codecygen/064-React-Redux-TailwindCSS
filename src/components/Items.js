@@ -10,7 +10,7 @@ import vrHeadset from '../assets/images/vrHeadset.jpg';
 
 import ItemCard from './ItemCard';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cart-slice';
 
 const itemList = [
@@ -64,10 +64,6 @@ const Items = () => {
     const addItemHandler = itemObject => {
         dispatch(cartActions.addItem(itemObject));
     };
-
-    const cartItems = useSelector(state => state.cart.cartItems);
-
-    console.log(cartItems);
 
     const itemCards = itemList.map(item => (
         <ItemCard
