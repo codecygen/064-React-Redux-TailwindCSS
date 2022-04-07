@@ -4,7 +4,8 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: {
         cartItems: [],
-        totalPrice: 0
+        totalPrice: 0,
+        totalAmount: 0,
     },
     reducers: {
         addItem(state, action) {
@@ -19,11 +20,17 @@ const cartSlice = createSlice({
                 state.cartItems.push(newItemObj);
             }
 
-            for (const eachItem of state.cartItems) {
-                state.totalPrice += eachItem.quantity * eachItem.price
-            }
+            // Remove the old loop sums to prevent it to be added on top of the updated loop
+            state.totalPrice = 0;
+            state.totalAmount = 0;
 
-            console.log(current(state.totalPrice));
+            current(state.cartItems).forEach(eachItem => {
+                state.totalPrice += eachItem.quantity * eachItem.price;
+                state.totalAmount += eachItem.quantity;
+            });
+
+            console.log(state.totalPrice);
+            console.log(state.totalAmount);
             console.log(current(state.cartItems));
         }
     }
