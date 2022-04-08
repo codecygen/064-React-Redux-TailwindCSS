@@ -21,7 +21,9 @@ const Navbar = props => {
     const[isCartButtonAnimated, setIsCartButtonAnimated] = useState(false);
 
     // Tailwind-CartButtonAnimation-OnClick
-    const cartButtonClasses = `${isCartButtonAnimated && `animate-bump`} text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg`;
+    const cartButtonClasses = `${isCartButtonAnimated && `animate-bump`} 
+        text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg`
+    ;
 
     const logoutHandler = () => {
         dispatch(authActions.logout());

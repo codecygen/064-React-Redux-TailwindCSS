@@ -12,8 +12,14 @@ module.exports = {
       // Tailwind-CartButtonAnimation-OnClick
       keyframes: {
         'bump': {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(1.15)' },
+          '0%': {
+            transform: 'scale(1)',
+            backgroundColor: '#bdaa66'
+          },
+
+          '100%': {
+            transform: 'scale(1.15)',
+          },
         }
       },
 
