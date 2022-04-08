@@ -1,3 +1,4 @@
+// Tailwind-CartButtonAnimation-OnClick
 import React, { useState, useEffect } from 'react';
 import classes from './Navbar.module.css';
 
@@ -5,6 +6,7 @@ import { SiReactivex } from "react-icons/si";
 import { BsCart4 } from "react-icons/bs";
 import { HiOutlineLogout } from "react-icons/hi";
 
+// Tailwind-CartButtonAnimation-OnClick
 import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../store/auth-slice';
 
@@ -12,11 +14,15 @@ const Navbar = props => {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     const userName = useSelector(state => state.auth.userName);
+
+    // Tailwind-CartButtonAnimation-OnClick
     const totalAmount = useSelector(state => state.cart.totalAmount);
 
+    // Tailwind-CartButtonAnimation-OnClick
     const[cartButtonAnimation, setCartButtonAnimation] = useState(false);
 
-    const cartClasses = `${classes['cart-button']}`;
+    // Tailwind-CartButtonAnimation-OnClick
+    const cartButtonClasses = `${cartButtonAnimation && `animate-bump`} text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg`;
 
     const logoutHandler = () => {
         dispatch(authActions.logout());
@@ -46,7 +52,7 @@ const Navbar = props => {
                 </div>
 
                 {isAuthenticated && <div className="absolute right-2 flex items-center">
-                    <button className="text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg animate-bump"
+                    <button className={cartButtonClasses}
                         onClick={props.clickCartHandler}
                     >
                         <BsCart4 className="text-red-200 px-2" size="40" />
