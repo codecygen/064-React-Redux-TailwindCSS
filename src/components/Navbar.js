@@ -1,6 +1,5 @@
 // Tailwind-CartButtonAnimation-OnClick
 import React, { useState, useEffect } from 'react';
-import classes from './Navbar.module.css';
 
 import { SiReactivex } from "react-icons/si";
 import { BsCart4 } from "react-icons/bs";
@@ -19,10 +18,10 @@ const Navbar = props => {
     const totalAmount = useSelector(state => state.cart.totalAmount);
 
     // Tailwind-CartButtonAnimation-OnClick
-    const[cartButtonAnimation, setCartButtonAnimation] = useState(false);
+    const[isCartButtonAnimated, setIsCartButtonAnimated] = useState(false);
 
     // Tailwind-CartButtonAnimation-OnClick
-    const cartButtonClasses = `${cartButtonAnimation && `animate-bump`} text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg`;
+    const cartButtonClasses = `${isCartButtonAnimated && `animate-bump`} text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg`;
 
     const logoutHandler = () => {
         dispatch(authActions.logout());
@@ -31,12 +30,23 @@ const Navbar = props => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const interim = setInterval(() => {
+        const interim = setTimeout(() => {
             setWindowWidth(window.innerWidth);
         }, 100);
 
-        return () => clearInterval(interim);
+        return () => clearTimeout(interim);
     }, [windowWidth]);
+
+    // Tailwind-CartButtonAnimation-OnClick
+    useEffect(() => {
+        setIsCartButtonAnimated(true);
+
+        const interim = setTimeout(() => {
+            setIsCartButtonAnimated(false);
+        }, 100);
+
+        return () => clearTimeout(interim);
+    }, [totalAmount]);
 
     return (
         <section className="fixed right-0 left-0 w-screen bg-[rgba(62,42,109,0.95)] py-6 shadow-lg shadow-red-300/25">

@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       // Tailwind-CartButtonAnimation-OnClick
       animation: {
-        'bump': 'bump 0.1s linear infinite',
+        'bump': 'bump 0.1s ease',
       },
 
       // Tailwind-CartButtonAnimation-OnClick
