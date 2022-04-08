@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import classes from './Navbar.module.css';
 
 import { SiReactivex } from "react-icons/si";
 import { BsCart4 } from "react-icons/bs";
@@ -11,6 +12,11 @@ const Navbar = props => {
     const dispatch = useDispatch();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     const userName = useSelector(state => state.auth.userName);
+    const totalAmount = useSelector(state => state.cart.totalAmount);
+
+    const[cartButtonAnimation, setCartButtonAnimation] = useState(false);
+
+    const cartClasses = `${classes['cart-button']}`;
 
     const logoutHandler = () => {
         dispatch(authActions.logout());
@@ -40,11 +46,11 @@ const Navbar = props => {
                 </div>
 
                 {isAuthenticated && <div className="absolute right-2 flex items-center">
-                    <button className="text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg"
+                    <button className="text-sm lg:text-xl px-2 lg:px-4 flex items-center bg-[rgba(117,41,124,0.5)] hover:bg-[rgba(85,14,88,0.5)] text-white font-bold py-2 rounded-full shadow-lg animate-bump"
                         onClick={props.clickCartHandler}
                     >
                         <BsCart4 className="text-red-200 px-2" size="40" />
-                        <p>5</p>
+                        <p className="w-6 box-border">{totalAmount}</p>
                     </button>
 
                     <p className="px-5 lg:px-16 text-lg lg:text-2xl text-neutral-50 text-center">
