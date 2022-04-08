@@ -32,11 +32,11 @@ const Navbar = props => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const interim = setTimeout(() => {
+        const interim = setInterval(() => {
             setWindowWidth(window.innerWidth);
         }, 100);
 
-        return () => clearTimeout(interim);
+        return () => clearInterval(interim);
     }, [windowWidth]);
 
     // Tailwind-CartButtonAnimation-OnClick
