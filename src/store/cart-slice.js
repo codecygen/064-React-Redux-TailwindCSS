@@ -42,7 +42,7 @@ const cartSlice = createSlice({
 
             state.sumPrice.total = parseFloat(state.sumPrice.total).toFixed(2);
             state.sumPrice.hst = parseFloat(state.sumPrice.total * 0.13).toFixed(2);
-            state.sumPrice.subTotal = parseFloat(state.sumPrice.total * 1.13).toFixed(2);;
+            state.sumPrice.subTotal = parseFloat(state.sumPrice.total * 1.13).toFixed(2);
 
             // console.log(state.sumPrice);
             // console.log(state.totalAmount);
