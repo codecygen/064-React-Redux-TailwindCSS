@@ -44,6 +44,13 @@ const cartSlice = createSlice({
             const priceAmountObj = calculatePriceAmount(state.cartItems);
             state.sumPrice = priceAmountObj.prices;
             state.totalAmount = priceAmountObj.itemAmount;
+
+            cartSlice.caseReducers.changeAmount(state, action);
+        },
+
+        changeAmount(state, action) {
+            // const newItemAmountId = action.payload;
+            console.log('hi');
         }
     }
 });
