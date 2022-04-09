@@ -1,4 +1,5 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import calculatePriceAmount from "./calculate-price-amount";
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -25,28 +26,13 @@ const cartSlice = createSlice({
                 state.cartItems.push(newItemObj);
             }
 
-            let prices = {
-                total: 0,
-                hst: 0,
-                subTotal: 0
-            };
-
-            let itemAmount = 0;
-
-            current(state.cartItems).forEach(eachItem => {
-                prices.total += eachItem.quantity * eachItem.price;
-                itemAmount += eachItem.quantity;
-            });
-
-            prices.total = parseFloat( prices.total).toFixed(2);
-            prices.hst = parseFloat( prices.total * 0.13).toFixed(2);
-            prices.subTotal = parseFloat( prices.total * 1.13).toFixed(2);
-
-            state.sumPrice = prices;
-            state.totalAmount = itemAmount;
-
-            // console.log(state.sumPrice);
-            // console.log(state.totalAmount);
+            const priceAmountObj = calculatePriceAmount(state.cartItems);
+            state.sumPrice = priceAmountObj.prices;
+            state.totalAmount = priceAmountObj.itemAmount;
+            
+            // current is needed and called from
+            // import { createSlice, current } from "@reduxjs/toolkit";
+            // It is called immer.
             // console.log(current(state.cartItems));
         },
 
@@ -55,25 +41,9 @@ const cartSlice = createSlice({
 
             state.cartItems = state.cartItems.filter(eachItem => eachItem.id !== removedItemId);
 
-            const prices = {
-                total: 0,
-                hst: 0,
-                subTotal: 0
-            };
-
-            let itemAmount = 0;
-
-            state.cartItems.forEach(eachItem => {
-                prices.total += eachItem.quantity * eachItem.price;
-                itemAmount += eachItem.quantity;
-            });
-
-            prices.total = parseFloat( prices.total).toFixed(2);
-            prices.hst = parseFloat( prices.total * 0.13).toFixed(2);
-            prices.subTotal = parseFloat( prices.total * 1.13).toFixed(2);
-
-            state.sumPrice = prices;
-            state.totalAmount = itemAmount;
+            const priceAmountObj = calculatePriceAmount(state.cartItems);
+            state.sumPrice = priceAmountObj.prices;
+            state.totalAmount = priceAmountObj.itemAmount;
         }
     }
 });
