@@ -16,7 +16,14 @@ const CartWindow = props => {
     const cartItems = useSelector(state => state.cart.cartItems);
 
     const cartCards = cartItems.map(item => (
-        <CartCard img={headset} desc={item.desc} price={item.price} quantity={item.quantity} />
+        <CartCard
+            key = {item.id}
+            id = {item.id}
+            img={headset}
+            desc={item.desc}
+            price={item.price}
+            quantity={item.quantity}
+        />
     ));
 
     return (

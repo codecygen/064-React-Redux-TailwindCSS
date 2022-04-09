@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../store/cart-slice';
 
 import { ImBin } from "react-icons/im";
 
 const CartCard = props => {
+    const dispatch = useDispatch();
+
+    const removeItemHandler = () => {
+        dispatch(cartActions.removeItem(props.id));
+    };
+
     return (
         <div className="my-2 flex flex-row bg-slate-100 rounded-xl shadow-xl">
             <div className="h-32 w-2/6">
@@ -23,8 +31,10 @@ const CartCard = props => {
             </div>
 
             <div className="w-3/12 sm:w-1/6 flex flex-col items-center justify-center">
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
-                <ImBin />
+                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
+                    onClick={removeItemHandler}
+                >
+                    <ImBin />
                 </button>
                 <p className="text-xl font-bold pt-10">${props.price}</p>
             </div>
