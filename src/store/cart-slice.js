@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import calculatePriceAmount from "./calculate-price-amount";
 
 const cartSlice = createSlice({
@@ -50,11 +50,21 @@ const cartSlice = createSlice({
             const { id, quantity, amountChange } = action.payload;
 
             if (quantity === 1 && amountChange === -1) {
-                cartSlice.caseReducers.removeItem(state, {type: 'cart/removeItem', payload: id});
+                const removeAction = { type: 'cart/removeItem', payload: id };
+                cartSlice.caseReducers.removeItem(state, removeAction);
                 return;
             }
 
-            console.log('hi');
+            const newAmountItemIndex = state.cartItems.findIndex(itemObj => itemObj.id === id);
+
+            amountChange === 1 ? 
+                state.cartItems[newAmountItemIndex].quantity++ : 
+                state.cartItems[newAmountItemIndex].quantity--
+            ;
+
+            const priceAmountObj = calculatePriceAmount(state.cartItems);
+            state.sumPrice = priceAmountObj.prices;
+            state.totalAmount = priceAmountObj.itemAmount;
         }
     }
 });
