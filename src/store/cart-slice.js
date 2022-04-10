@@ -44,12 +44,16 @@ const cartSlice = createSlice({
             const priceAmountObj = calculatePriceAmount(state.cartItems);
             state.sumPrice = priceAmountObj.prices;
             state.totalAmount = priceAmountObj.itemAmount;
-
-            cartSlice.caseReducers.changeAmount(state, action);
         },
 
         changeAmount(state, action) {
-            // const newItemAmountId = action.payload;
+            const { id, quantity, amountChange } = action.payload;
+
+            if (quantity === 1 && amountChange === -1) {
+                cartSlice.caseReducers.removeItem(state, {type: 'cart/removeItem', payload: id});
+                return;
+            }
+
             console.log('hi');
         }
     }
