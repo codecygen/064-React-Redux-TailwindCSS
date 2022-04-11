@@ -7,7 +7,7 @@ import CartModal from './UI/CartModal';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { sendData } from './Database/database';
+import { sendData, getData } from './Database/database';
 
 let isInitial = true;
 
@@ -32,6 +32,13 @@ const App = () => {
   const clickCartHandler = () => {
     setIsCartShown(prevValue => !prevValue);
   };
+
+  useEffect(() => {
+    const test = getData();
+    console.log(Promise.resolve(test));
+
+
+  }, []);
 
   useEffect(() => {
     if (isInitial) {
