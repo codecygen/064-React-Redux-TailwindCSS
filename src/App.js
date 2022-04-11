@@ -1,13 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Items from './components/Items';
 import CartModal from './UI/CartModal';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { sendData } from './Database/database';
+
+let isInitial = true;
 
 const App = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart);
+
   const isItemFetched = sessionStorage.getItem('isItemFetched') ? true : false;
 
   if (!sessionStorage.getItem('isItemFetched')) {
@@ -25,6 +32,15 @@ const App = () => {
   const clickCartHandler = () => {
     setIsCartShown(prevValue => !prevValue);
   };
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+
+    sendData(cart);
+  }, [cart]);
 
   return (
     <div>
