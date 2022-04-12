@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { sendData, getData } from './Database/database';
 
+import { cartActions } from './store/cart-slice';
+
 let isInitial = true;
 
 const App = () => {
@@ -33,9 +35,14 @@ const App = () => {
     setIsCartShown(prevValue => !prevValue);
   };
 
-  useEffect(async () => {
-    const databaseData = await getData();
-    console.log(databaseData);
+  useEffect(() => {
+    const fetchData = async () => {
+      const databaseData = await getData();
+      dispatch(cartActions.loadPageWithCart(databaseData));
+    };
+
+    fetchData();
+     
   }, []);
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data } from "autoprefixer";
 import calculatePriceAmount from "./calculate-price-amount";
 
 const cartSlice = createSlice({
@@ -68,7 +67,7 @@ const cartSlice = createSlice({
             state.totalAmount = priceAmountObj.itemAmount;
         },
 
-        replaceItems(state, action) {
+        loadPageWithCart(state, action) {
             const databaseValues = action.payload;
 
             state.cartItems = databaseValues.cartItems;
