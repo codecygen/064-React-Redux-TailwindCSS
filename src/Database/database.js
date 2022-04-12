@@ -1,5 +1,3 @@
-
-
 const databaseLink =
     'https://food-order-app-database-fa642-default-rtdb.firebaseio.com/cart.json'
 ;

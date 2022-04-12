@@ -33,11 +33,9 @@ const App = () => {
     setIsCartShown(prevValue => !prevValue);
   };
 
-  useEffect(() => {
-    const test = getData();
-    console.log(Promise.resolve(test));
-
-
+  useEffect(async () => {
+    const databaseData = await getData();
+    console.log(databaseData);
   }, []);
 
   useEffect(() => {
