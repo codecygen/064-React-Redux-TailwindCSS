@@ -17,16 +17,6 @@ const App = () => {
   const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
 
-  const isItemFetched = sessionStorage.getItem('isItemFetched') ? true : false;
-
-  if (!sessionStorage.getItem('isItemFetched')) {
-    sessionStorage.setItem('isItemFetched', true);
-  }
-
-  if (!isItemFetched) {
-    console.log('Fetching Data!');
-  }
-
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
   const [isCartShown, setIsCartShown] = useState(false);
