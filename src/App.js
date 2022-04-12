@@ -43,7 +43,7 @@ const App = () => {
 
     fetchData();
      
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (isInitial) {
