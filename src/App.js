@@ -28,6 +28,11 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const databaseData = await getData();
+
+      if (databaseData.totalAmount === 0) {
+        return;
+      }
+
       dispatch(cartActions.loadPageWithCart(databaseData));
     };
 
