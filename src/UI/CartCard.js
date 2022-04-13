@@ -18,7 +18,7 @@ const CartCard = props => {
     return (
         <div className="my-2 flex flex-row bg-slate-100 rounded-xl shadow-xl">
             <div className="h-32 w-2/6">
-                {/* <img src={props.img} className="h-full mx-auto rounded-xl" alt="Item Display" /> */}
+                <img src={props.img} className="h-full mx-auto rounded-xl" alt="Item Display" />
             </div>
 
             <div className="w-5/12 sm:w-3/6 flex flex-col lg:flex-row justify-center items-center">

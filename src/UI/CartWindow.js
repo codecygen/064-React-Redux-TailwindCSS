@@ -4,11 +4,6 @@ import CartCard from './CartCard';
 
 import { useSelector } from 'react-redux';
 
-// import keyboard from '../assets/images/keyboard.jpeg';
-// import mouse from '../assets/images/mouse.jpeg';
-// import monitor from '../assets/images/monitor.jpg';
-// import vrHeadset from '../assets/images/vrHeadset.jpg';
-
 const CartWindow = props => {
     const sumPrice = useSelector(state => state.cart.sumPrice);
     const cartItems = useSelector(state => state.cart.cartItems);
@@ -16,7 +11,8 @@ const CartWindow = props => {
     const cartCards = cartItems.map(item => (
         <CartCard
             key = {item.id}
-            id = {item.id}
+            id = {item.id} 
+            img = {item.img}
             desc={item.desc}
             price={item.price}
             quantity={item.quantity}

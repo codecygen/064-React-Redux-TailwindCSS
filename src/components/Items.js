@@ -56,8 +56,6 @@ const itemList = [
     },
 ];
 
-itemList.forEach(item => console.log(item.image));
-
 const Items = () => {
 
     const dispatch = useDispatch();

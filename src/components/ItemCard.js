@@ -11,7 +11,7 @@ const ItemCard = props => {
     
     return (
         <div className="bg-violet-200 w-64 text-center p-5 rounded-lg shadow-2xl">
-            <img src={require('../assets/images/Laptop.jpg')} className="rounded-xl h-32 mx-auto" alt="Display" />
+            <img src={props.img} className="rounded-xl h-32 mx-auto" alt="Display" />
             <p className="pt-5 text-xl italic">{props.desc}</p>
 
             <p className="pt-5 pb-5 text-xl font-bold">${props.price}</p>
