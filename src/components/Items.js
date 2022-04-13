@@ -1,14 +1,13 @@
 import React from 'react';
 
-import laptop from '../assets/images/laptop.jpg';
-import headset from '../assets/images/headset.jpg';
-import keyboard from '../assets/images/keyboard.jpeg';
-import mouse from '../assets/images/mouse.jpeg';
-import monitor from '../assets/images/monitor.jpg';
-import vrHeadset from '../assets/images/vrHeadset.jpg';
-
-
 import ItemCard from './ItemCard';
+
+import Laptop from '../assets/images/Laptop.jpg';
+import Headset from '../assets/images/Headset.jpg';
+import Keyboard from '../assets/images/Keyboard.jpg';
+import Mouse from '../assets/images/Mouse.jpg';
+import Monitor from '../assets/images/Monitor.jpg';
+import VR from '../assets/images/VR.jpg';
 
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../store/cart-slice';
@@ -16,46 +15,48 @@ import { cartActions } from '../store/cart-slice';
 const itemList = [
     {
         id: 'a0',
-        image: laptop,
+        image: Laptop,
         description: 'Laptop',
         price: 2439
     },
 
     {
         id: 'a1',
-        image: headset,
+        image: Headset,
         description: 'Headset',
         price: 499
     },
 
     {
         id: 'a2',
-        image: keyboard,
+        image: Keyboard,
         description: 'Keyboard',
         price: 89.99
     },
 
     {
         id: 'a3',
-        image: mouse,
+        image: Mouse,
         description: 'Mouse',
         price: 45.99
     },
 
     {
         id: 'a4',
-        image: monitor,
+        image: Monitor,
         description: 'Monitor',
         price: 158.89
     },
 
     {
         id: 'a5',
-        image: vrHeadset,
-        description: 'VR Headset',
+        image: VR,
+        description: 'VR',
         price: 739
     },
 ];
+
+itemList.forEach(item => console.log(item.image));
 
 const Items = () => {
 

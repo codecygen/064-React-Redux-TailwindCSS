@@ -4,8 +4,6 @@ import CartCard from './CartCard';
 
 import { useSelector } from 'react-redux';
 
-import laptop from '../assets/images/laptop.jpg';
-import headset from '../assets/images/headset.jpg';
 // import keyboard from '../assets/images/keyboard.jpeg';
 // import mouse from '../assets/images/mouse.jpeg';
 // import monitor from '../assets/images/monitor.jpg';
@@ -19,7 +17,6 @@ const CartWindow = props => {
         <CartCard
             key = {item.id}
             id = {item.id}
-            img={headset}
             desc={item.desc}
             price={item.price}
             quantity={item.quantity}
